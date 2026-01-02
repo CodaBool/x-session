@@ -19,8 +19,10 @@ TOTP2=
 ```
 - .rsshub.env (the environment file I'll replace the auth token in and transfer)
 
+# Python carriage issue
+the `nodriver` has a carriage issue. Simply append `# -*- coding: latin-1 -*-` to the top of the file found under `./venv/lib64/python3.14/site-packages/nodriver/cdp/network.py`
 
 # assumptions
-- flatpak chrome
+- linux flatpak chrome (if not on that platform change the session.py script)
 - already have a venv with the installed packages
 - the above hidden files have been created
