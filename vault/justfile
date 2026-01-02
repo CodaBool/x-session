@@ -1,0 +1,4 @@
+build:
+  docker build -t session .
+run:
+  docker run --shm-size=1g -e CHROME_BIN=/usr/bin/chromium --rm -it --init session user pass totp --headless
