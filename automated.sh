@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # ---- config ----
-BASE_DIR="$HOME/code/nitter-bot/check_me_in"
+BASE_DIR="$HOME/code/nitter"
 VENV_DIR="$BASE_DIR/venv"
 ENV_FILE="$BASE_DIR/.env"
 SESSIONS_OUT="$BASE_DIR/sessions.jsonl"
@@ -41,17 +41,18 @@ load_env_file() {
 # ---- main ----
 cd "$BASE_DIR" || die "Failed to cd to $BASE_DIR"
 
-# venv bootstrap
-if [[ ! -d "$VENV_DIR" ]]; then
-  python3 -m venv "$VENV_DIR"
-fi
+source venv/bin/activate
+
+#if [[ ! -d "$VENV_DIR" ]]; then
+#  python3 -m venv "$VENV_DIR"
+#fi
 
 # activate venv
-source "$VENV_DIR/bin/activate"
+#source "$VENV_DIR/bin/activate"
 
 # if first time install
-# python -m pip install -U pip >/dev/null
-# python -m pip install -r "$REQS"
+python -m pip install -U pip >/dev/null
+python -m pip install -r "$REQS"
 
 load_env_file "$ENV_FILE"
 
