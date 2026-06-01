@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # ---- config ----
-BASE_DIR="$HOME/code/vault/nitter"
+BASE_DIR="$HOME/code/nitter"
 VENV_DIR="$BASE_DIR/venv"
 ENV_FILE="$BASE_DIR/.env"
 SESSIONS_OUT="$BASE_DIR/sessions.jsonl"
